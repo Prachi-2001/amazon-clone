@@ -22,3 +22,47 @@
     width: 22px;
     background-color: #cd9042;
 }
+
+.header--search{
+    display: flex;
+    align-items: center;
+    flex: 1;
+    border-radius: 24px;
+}
+
+.header--search--input{
+    height: 12px;
+    width: 100%;
+    border: none;
+    padding: 11px;
+}
+.header--option{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.header--nav{
+    display: flex;
+    justify-content: space-evenly;
+}
+.header--optionOne{
+    font-weight: 300;
+    font-size: 12px;
+}
+.header--optionTwo{
+    font-weight: 800;
+    font-size: 15px;
+}
+
+.header--BasketOption{
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.header-basketCount{
+    margin-left: 10px;
+    margin-right: 10px;
+}
