@@ -2,7 +2,6 @@
     display: flex;
     margin-top: 20px;
     margin-bottom: 20px;
-    align-items: center;
 }
 .checkoutproduct--info{
     padding-left: 20px;
@@ -18,7 +17,7 @@
 .checkoutproduct--image{
     height:180px;
     width: 180px;
-    object-fit:cover;
+    object-fit:contain;
 }
 
 .checkoutproduct--rating{
