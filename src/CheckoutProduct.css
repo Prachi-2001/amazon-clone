@@ -16,7 +16,9 @@
 
 .checkoutproduct--image{
     height:180px;
-    width: 180px;
+    width: 180px !important;
+    background-repeat: no-repeat;
+    background-size: cover;
     object-fit:contain;
 }
 

@@ -10,9 +10,9 @@ function Subtotal() {
   return (
     <div className="subtotal">
       {/* Inbuilt component  */}
-        <CurrencyFormat
+        {/* <CurrencyFormat */}
         renderText={(value) => (
-            <>
+        <>
               <p>
                 {/* Part of the homework */}
                 Subtotal ({basket.length}): <strong>{value}</strong>
@@ -27,7 +27,7 @@ function Subtotal() {
           displayType={"text"}
           thousandSeparator={true}
           prefix={"$"}
-        />  
+        {/* />   */}
     <button>Proceed to Checkout</button>
     </div>
   );
