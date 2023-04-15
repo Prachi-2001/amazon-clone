@@ -7,7 +7,8 @@ import { useStateValue } from './StateProvider';
 
 import Subtotal from "./Subtotal";
 function Checkout() {
-  const [{basket},dispatch] = useStateValue();
+  // use context hook else reducer hook
+  const [{basket,user},dispatch] = useStateValue();
 
   return (
     <div className="checkout">
@@ -19,6 +20,7 @@ function Checkout() {
         />
 
         <div >
+          <h3>Hello, {user && user.email}</h3>
           <h2 className="checkout--title">Your Shopping Basket</h2>
             {basket.map(item => {
               return <CheckoutProduct 

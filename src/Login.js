@@ -1,33 +1,47 @@
 import React, { useState } from 'react'
 import "./Login.css"
 import Amazon_logo from "./images/Amazon-logo.png";
-import {Link} from "react-router-dom"
+import {Link , useNavigate} from "react-router-dom"
 // import auth from local firebase 
 import { auth } from './firebase';
 
 
 
 function Login() {
+  // pull history 
+  const history = useNavigate();
+
   const [email,setEmail] = useState('')
   // useState hook for password 
   const [password,setPassword] = useState('')
   
-  // this below code prevent the code from refersdhing
   const signIn = e => {
+  // this below code prevent the code from refreshing
+
     e.preventDefault();
 
     // some fancy firebase login shitt
+    auth
+    .signInWithEmailAndPassword(email,password)
+    .then(auth => {
+      history('/')
+    })
   }
 
   const register = e => {
     e.preventDefault();
 
     // some fancy firebase login shitt
+    // this below code is for creating user account 
     auth
       .createUserWithEmailAndPassword(email,password)
+      // then code executes after succesfull creation of user account. it may display successful registration done
       .then((auth) => {
         // sucessfully created new user
-        console.log(auth);
+        // auth is object here
+        if(auth){
+          history('/')
+        }
       })
       .catch(error => alert(error.message))
   }
@@ -45,7 +59,7 @@ function Login() {
             <input type="text" placeholder='Enter your email' value={email} onChange={e => setEmail(e.target.value)}/>
 
             <h5>Password</h5>
-            <input type="password" placeholder='Enter your email' value={password} onChange={e => setPassword(e.target.value)}/>
+            <input type="password" placeholder='Enter your password' value={password} onChange={e => setPassword(e.target.value)}/>
             <button onClick={signIn} type="submit" className='login-sign--in'>Sign In</button>
         </form>
 
