@@ -11,8 +11,11 @@ import { useStateValue } from "./StateProvider";
 import Payment from "./Payment";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
+import Orders from './Orders';
+
 
 // it loads stripe and store it into a promise 
+// pass publishable key 
 const promise = loadStripe(
   "pk_test_51Mx29RSCJzcvegipAlWfzIWDMsnZe0ZhELSMHifFhucByOMfXOgVeF7KyZNNBLtpHXWhDiGABaD6OjZNjd1rF7Ly00Edb8Qr1y"
 );
@@ -55,6 +58,18 @@ function App() {
             }
           />
         </Routes>
+
+        <Routes>
+          <Route
+            path="/orders"
+            element={
+              <div>
+                <Header /> <Orders />
+              </div>
+            }
+          />
+        </Routes>
+
         <Routes>
           <Route
             path="/login"

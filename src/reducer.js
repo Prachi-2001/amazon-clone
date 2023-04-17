@@ -17,6 +17,12 @@ const reducer = (state, action) => {
                 basket: [...state.basket,action.item]
             };
 
+        case 'EMPTY_BASKET':
+            return{
+                 ...state,
+                basket: []
+            };
+            
         case 'REMOVE_FROM_BASKET':
             // findIndex array method takes function that work to find the 1st match and remove product and return true
             const index = state.basket.findIndex(

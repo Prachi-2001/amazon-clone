@@ -2,6 +2,7 @@
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
+import {initializeApp} from 'firebase/app'
 
 const firebaseConfig = {
   // Add your Firebase project's API keys here
@@ -15,11 +16,11 @@ const firebaseConfig = {
 };
 
 // initialise app
-const firebaseapp = firebase.initializeApp(firebaseConfig);
+const firebaseApp = firebase.initializeApp(firebaseConfig);
 
 // intializing our app to the firestore database 
 // firestore is a realtime database in firebase 
-const db = firebaseapp.firestore();
+const db = firebaseApp.firestore();
 
 // // this give  avariable that we can actually handle and sign in 
 const auth = firebase.auth();
